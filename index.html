@@ -682,18 +682,23 @@
                 card.onclick = () => openModal(f.id);
 
                 card.innerHTML = `
-                    <div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/30">${f.year}</span>
-                            <span class="text-[10px] font-bold text-purple-300 uppercase">${f.status}</span>
+                    <div class="relative">
+                        <img src="images/images.jfif" alt="${f.title} Poster" class="w-full h-48 sm:h-64 object-cover rounded-t-xl">
+                        <div class="absolute inset-0 flex items-end p-3">
+                            <div class="flex items-center gap-2 rounded-xl bg-amber-500/20 px-2 py-1 text-xs text-amber-300">
+                                <span>${f.year}</span>
+                                <span class="text-amber-200 uppercase tracking-wider">/${f.status}</span>
+                            </div>
                         </div>
-                        <h4 class="font-serif font-bold text-lg text-white group-hover:text-amber-400 transition">${f.title}</h4>
-                        <p class="text-xs text-purple-200/80 mt-1">Role: <strong class="text-purple-100">${f.role}</strong></p>
-                        <p class="text-[11px] text-purple-300/70 mt-0.5">Co-Stars: ${f.coStars}</p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-purple-900/30 flex items-center justify-between text-xs text-amber-400 font-semibold">
-                        <span>Details & Trivia</span>
-                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition"></i>
+                        <div class="p-4">
+                            <h4 class="font-serif font-bold text-lg text-white group-hover:text-amber-400 transition">${f.title}</h4>
+                            <p class="text-xs text-purple-200/80 mt-1">Role: <strong class="text-purple-100">${f.role}</strong></p>
+                            <p class="text-[11px] text-purple-300/70 mt-0.5">Co-Stars: ${f.coStars}</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-purple-900/30 flex items-center justify-between text-xs text-amber-400 font-semibold">
+                            <span>Details & Trivia</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition"></i>
+                        </div>
                     </div>
                 `;
                 grid.appendChild(card);
